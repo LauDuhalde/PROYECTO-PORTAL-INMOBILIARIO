@@ -8,7 +8,7 @@
 
     {%for inmueble in inmuebles%}
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{inmueble.imagen}}" alt="Card image cap">
+        <img class="card-img-top" src="{{inmueble.imagen.url}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{inmueble.nombre}}</h5>
           <p class="card-text">{{inmueble.descripcion}}</p>

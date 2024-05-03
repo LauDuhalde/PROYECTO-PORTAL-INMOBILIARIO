@@ -54,7 +54,7 @@ class Inmueble(models.Model):
     cantidad_habitaciones = models.PositiveIntegerField()
     cantidad_banios = models.PositiveIntegerField()
     #imagen = models.URLField(max_length=200)
-    imagen =models.ImageField(upload_to='web/media/')
+    imagen =models.ImageField(upload_to='')
     disponible = models.BooleanField(default=True)
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='inmuebles',limit_choices_to={'tipo_usuario': 'arrendador'})
     
