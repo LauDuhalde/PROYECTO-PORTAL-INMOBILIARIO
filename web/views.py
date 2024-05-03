@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 
-from web.models import SolicitudArriendo
+from web.models import SolicitudArriendo, Inmueble
 from .forms import RegistroUsuarioForm
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    inmuebles =  Inmueble.objects.all()
+    return render(request, 'index.html',{'inmuebles':inmuebles})
+
+@login_required
+def detalle_inmueble(request, id):
+    inmueble=Inmueble.objects.get(id=id)
+    return render(request, 'detalle_inmueble.html',{'inmueble':inmueble})
+
 
 
 

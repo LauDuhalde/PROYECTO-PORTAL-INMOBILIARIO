@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from web.views import registro_usuario,index
+from web.views import registro_usuario,index, detalle_inmueble
+0
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from portalinmobiliario import settings
@@ -27,5 +28,7 @@ urlpatterns = [
     path('registro/', registro_usuario, name='registro_usuario'),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
+    path('detalle_inmueble/<int:id>/', detalle_inmueble, name='detalle_inmueble'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,6 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+"""
+
+class Region(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+
+class Comuna(models.Model):
+    nombre = models.CharField(max_length=100)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.nombre} ({self.region})"
+
+"""
 
 class Usuario(User):
     TIPO_USUARIO_CHOICES = (
@@ -27,6 +43,7 @@ class Inmueble(models.Model):
     )
     nombre = models.CharField(max_length=50)
     direccion = models.CharField(max_length=100)
+    #comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
     comuna = models.CharField(max_length=50)
     tipo_inmueble = models.CharField(max_length=20, choices=TIPO_INMUEBLE_CHOICES)
     precio = models.DecimalField(max_digits=8, decimal_places=0)
@@ -37,7 +54,7 @@ class Inmueble(models.Model):
     cantidad_habitaciones = models.PositiveIntegerField()
     cantidad_banios = models.PositiveIntegerField()
     #imagen = models.URLField(max_length=200)
-    imagen =models.ImageField(upload_to='')
+    imagen =models.ImageField(upload_to='web/media/')
     disponible = models.BooleanField(default=True)
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='inmuebles',limit_choices_to={'tipo_usuario': 'arrendador'})
     
@@ -45,8 +62,8 @@ class Inmueble(models.Model):
         return (f"{self.nombre}")
     
 class SolicitudArriendo(models.Model):
-    arrendatario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE)
+    arrendatario = models.ForeignKey(Usuario, related_name='solicitudes', on_delete=models.CASCADE)
+    inmueble = models.ForeignKey(Inmueble, related_name='solicitudes', on_delete=models.CASCADE)
     mensaje = models.TextField(blank=True)
     #aprobada = models.BooleanField(default=False)
     def __str__(self):
