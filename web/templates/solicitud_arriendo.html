@@ -1,0 +1,13 @@
+{% extends 'base_profe.html' %} 
+{% block content %} 
+
+<section id="contact" class="container p-5 text-center border rounded mb-5">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar Solicitud</button>
+</form>
+  </section>
+  
+
+{% endblock %}
