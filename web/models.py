@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-"""
 
 class Region(models.Model):
     nombre = models.CharField(max_length=100)
@@ -12,12 +11,10 @@ class Region(models.Model):
 
 class Comuna(models.Model):
     nombre = models.CharField(max_length=100)
-    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, related_name='comunas', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.nombre} ({self.region})"
-
-"""
+        return self.nombre
 
 class Usuario(User):
     TIPO_USUARIO_CHOICES = (
@@ -43,8 +40,8 @@ class Inmueble(models.Model):
     )
     nombre = models.CharField(max_length=50)
     direccion = models.CharField(max_length=100)
-    #comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
-    comuna = models.CharField(max_length=50)
+    comuna = models.ForeignKey(Comuna, related_name='inmuebles', on_delete=models.CASCADE)
+    #comuna = models.CharField(max_length=50)
     tipo_inmueble = models.CharField(max_length=20, choices=TIPO_INMUEBLE_CHOICES)
     precio = models.DecimalField(max_digits=8, decimal_places=0)
     descripcion = models.TextField(max_length=100)
@@ -53,7 +50,6 @@ class Inmueble(models.Model):
     cantidad_estacionamientos = models.PositiveIntegerField()
     cantidad_habitaciones = models.PositiveIntegerField()
     cantidad_banios = models.PositiveIntegerField()
-    #imagen = models.URLField(max_length=200)
     imagen =models.ImageField(upload_to='')
     disponible = models.BooleanField(default=True)
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='inmuebles',limit_choices_to={'tipo_usuario': 'arrendador'})

@@ -1,0 +1,28 @@
+[
+        {
+          "model": "web.usuario",
+          "fields": {
+            "rut": "123456789",
+            "nombres": "John",
+            "apellidos": "Doe",
+            "direccion": "Dirección 123",
+            "telefono": "123456789",
+            "tipo_usuario": "arrendatario",
+            "correo_electronico": "user1@example.com",
+            "user_ptr_id": 2
+          }
+        },
+        {
+            "model": "web.usuario",
+            "fields": {
+              "rut": "123456780",
+              "nombres": "Juan",
+              "apellidos": "Perez",
+              "direccion": "Calle Falsa 123",
+              "telefono": "123456789",
+              "tipo_usuario": "arrendador",
+              "correo_electronico": "user2@example.com",
+              "user_ptr_id": 3
+            }
+          }
+]

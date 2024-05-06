@@ -44,6 +44,22 @@ Requerimiento 3d: Borrar un registro del modelo de datos
 
 </details>
 
+<details>
+<summary>Hito 2</summary>
+
+Requerimiento 1a: Loaddata Regiones y Comunas
+
+[imagen]
+
+Requerimiento 2a: Loaddata Tipos de inmuebles
+No aplica, tipo_inmueble es un choices en vez de una tabla.
+
+Requerimiento 2c: Loaddata Usuarios e Inmuebles
+
+[imagen]
+
+</details>
+
 ## Características Base del Sitio Web
 
 Sitio web desarrollado con Django 4.2, Bootstrap 5.0.2 y PosgreSQL 15
