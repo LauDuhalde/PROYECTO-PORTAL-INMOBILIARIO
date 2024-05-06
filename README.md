@@ -49,14 +49,14 @@ Requerimiento 3d: Borrar un registro del modelo de datos
 
 Requerimiento 1a: Loaddata Regiones y Comunas
 
-[imagen]
+![loaddata regiones y comunas](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/raw/main/screenshots_hitos/hito2/1a%20loaddata%20regiones%20y%20comunas.png)
 
-Requerimiento 2a: Loaddata Tipos de inmuebles
+Requerimiento 1b: Loaddata Tipos de inmuebles
 No aplica, tipo_inmueble es un choices en vez de una tabla.
 
-Requerimiento 2c: Loaddata Usuarios e Inmuebles
+Requerimiento 1c: Loaddata Usuarios e Inmuebles
 
-[imagen]
+![loaddata usuarios e inmuebles](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/raw/main/screenshots_hitos/hito2/1c%20loaddata%20usuarios%20e%20inmuebles.png)
 
 </details>
 
