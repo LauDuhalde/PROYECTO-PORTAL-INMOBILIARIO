@@ -63,9 +63,13 @@ Requerimiento 2: Consultar con SQL inmuebles por comunas
 
 ![Listado de inmuebles por comuna con SQL](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/raw/main/screenshots_hitos/hito2/2%20listado%20inmuebles%20comuna%20con%20SQL.png)
 
+[Documento de salida](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/hito2_req2_inmuebles_comuna.txt)
+
 Requerimiento 3: Consultar con SQL inmuebles por Región
 
 ![Listado de inmuebles por región con SQL](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/raw/main/screenshots_hitos/hito2/3%20listado%20inmuebles%20region%20SQL.png)
+
+[Documento de salida](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/hito2_req3_inmuebles_region.txt)
 
 </details>
 
