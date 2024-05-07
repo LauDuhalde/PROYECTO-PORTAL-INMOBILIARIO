@@ -13,8 +13,10 @@
       crossorigin="anonymous"
     />
 
-    <title>{% block 'tittle' %}Bienvenido a OnlyFlans{% endblock %}</title>
+    <title>{% block 'tittle' %}Bienvenido a Portal inmobiliario{% endblock %}</title>
     {% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
   </head>
 

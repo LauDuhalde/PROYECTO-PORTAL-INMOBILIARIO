@@ -1,4 +1,4 @@
-{% extends "base_profe.html" %} 
+{% extends "base.html" %} 
 {% block content %}
 
 <section id="login" class="container p-5 text-center border rounded mb-5">
@@ -44,7 +44,7 @@
         <label for="floatingPassword">Contraseña</label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
-      <a href="{% url 'index' %}">Si aún no tienes cuenta, registrate aquí</a>
+      <a href="{% url 'registro_usuario' %}">Si aún no tienes cuenta, registrate aquí</a>
     </form>
   </div>
 </section>

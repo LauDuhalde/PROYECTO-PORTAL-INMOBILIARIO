@@ -44,7 +44,7 @@ class Inmueble(models.Model):
     #comuna = models.CharField(max_length=50)
     tipo_inmueble = models.CharField(max_length=20, choices=TIPO_INMUEBLE_CHOICES)
     precio = models.DecimalField(max_digits=8, decimal_places=0)
-    descripcion = models.TextField(max_length=100)
+    descripcion = models.TextField(max_length=1000)
     m2_construidos = models.DecimalField(max_digits=10, decimal_places=2)
     m2_terreno = models.DecimalField(max_digits=10, decimal_places=2)
     cantidad_estacionamientos = models.PositiveIntegerField()
