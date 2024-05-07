@@ -58,10 +58,20 @@ class Inmueble(models.Model):
         return (f"{self.nombre}")
     
 class SolicitudArriendo(models.Model):
+    ESTADO_SOLICITUD_CHOICES = (
+        ('pendiente', 'Pendiente'),
+        ('aceptada', 'Aceptada'),
+        ('rechazada', 'Rechazada'),
+        ('cancelada', 'Cancelada'),
+    )
     arrendatario = models.ForeignKey(Usuario, related_name='solicitudes', on_delete=models.CASCADE)
     inmueble = models.ForeignKey(Inmueble, related_name='solicitudes', on_delete=models.CASCADE)
     mensaje = models.TextField(blank=True)
-    #aprobada = models.BooleanField(default=False)
+    
+    fecha_solicitud = models.DateTimeField(auto_now_add=True)
+    fecha_modificado = models.DateTimeField(auto_now=True)
+    
+    estado = models.CharField(choices=ESTADO_SOLICITUD_CHOICES, default='pendiente')
     def __str__(self):
         return f"Solicitud de {self.inmueble.nombre} por {self.arrendatario.nombres} {self.arrendatario.apellidos}"    
     

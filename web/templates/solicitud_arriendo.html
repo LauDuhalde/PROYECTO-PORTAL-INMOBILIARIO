@@ -4,6 +4,8 @@
 <section id="contact" class="container p-5 text-center border rounded mb-5">
   <form method="POST">
     {% csrf_token %}
+    <p>Usuario: {{usuario.nombres}}</p>
+    <p>Inmueble: {{inmueble.nombre}}</p>
     {{ form.as_p }}
     <button type="submit">Enviar Solicitud</button>
 </form>

@@ -36,13 +36,13 @@ def registro_usuario(request):
 
 
 def crear_solicitud_arriendo(request, inmueble_id, usuario_id):
+    # Obtener instancia del inmueble y el usuario
+    inmueble = Inmueble.objects.get(pk=inmueble_id)
+    usuario = Usuario.objects.get(pk=usuario_id)
+            
     if request.method == 'POST':
         form = SolicitudArriendoForm(request.POST)
         if form.is_valid():
-            # Obtener instancia del inmueble y el usuario
-            inmueble = Inmueble.objects.get(pk=inmueble_id)
-            usuario = Usuario.objects.get(pk=usuario_id)
-            
             # Asignar los IDs al formulario y guardar la solicitud de arriendo
             solicitud = form.save(commit=False)
             solicitud.inmueble = inmueble
@@ -52,7 +52,7 @@ def crear_solicitud_arriendo(request, inmueble_id, usuario_id):
             return redirect('success')
     else:
         form = SolicitudArriendoForm(initial={'arrendatario': usuario_id, 'inmueble': inmueble_id})
-    return render(request, 'solicitud_arriendo.html', {'form': form})
+    return render(request, 'solicitud_arriendo.html', {'form': form, 'usuario':usuario, 'inmueble':inmueble})
 
 def success(request):
     return render(request, 'success.html',{})
