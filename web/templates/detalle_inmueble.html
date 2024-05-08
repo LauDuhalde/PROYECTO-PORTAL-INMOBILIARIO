@@ -22,8 +22,9 @@
           <p>{{ inmueble.descripcion }}</p>
           <p>{{inmueble.comuna}}</p>
           <p>Precio arriendo: ${{ inmueble.precio }}</p>
-          <!-- En tu template de detalle_inmueble.html -->
-          <a href="{% url 'crear_solicitud_arriendo' inmueble.id %}">Crear Solicitud de Arriendo</a>
+          {% if user.usuario.tipo_usuario == 'arrendatario' %}
+            <a href="{% url 'crear_solicitud_arriendo' inmueble.id %}">Crear Solicitud de Arriendo</a>
+          {% endif %}
       </div>
   </div>
   {%endif%}

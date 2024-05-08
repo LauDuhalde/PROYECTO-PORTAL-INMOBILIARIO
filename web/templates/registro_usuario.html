@@ -4,11 +4,85 @@
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}  
-<form method="post">
+{% comment %} <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Registrarse</button>
-</form>
+</form> {% endcomment %}
+
+<section id="registro_usuario" class="container p-5  border rounded mb-5">
+    <div class="mx-auto" style="max-width: 400px;">
+      {% if form.errors %}
+    <div class="alert alert-danger">
+      <strong>Error:</strong>
+      {% for field in form %}
+          {% for error in field.errors %}
+              {{ error }}
+          {% endfor %}
+      {% endfor %}
+      {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+              {{ error }}
+          {% endfor %}
+      {% endif %}
+  </div>
+    {% endif %}
+    
+      <form class="form-signin text-center" method="post">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal">Registrate como cliente</h1>
+      
+        <div class="form-floating mb-3">
+          <input type="text" name="username" class="form-control" id="floatingUsername" placeholder="Username" required>
+          <label for="floatingUsername">Nombre de usuario</label>
+          {{ form.username.help_text }}
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+            <label for="floatingPassword">Contraseña</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="correo_electronico" name="correo_electronico" class="form-control" id="floatingcorreo_electronico" placeholder="correo_electronico" required>
+            <label for="floatingcorreo_electronico">Correo Electrónico</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="nombres" name="nombres" class="form-control" id="floatingnombres" placeholder="nombres" required>
+            <label for="floatingnombres">Nombres</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="apellidos" name="apellidos" class="form-control" id="floatingapellidos" placeholder="apellidos" required>
+            <label for="floatingapellidos">Apellidos</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="rut" name="rut" class="form-control" id="floatingrut" placeholder="rut" required>
+            <label for="floatingrut">RUT</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="direccion" name="direccion" class="form-control" id="floatingdireccion" placeholder="direccion" required>
+            <label for="floatingdireccion">Dirección</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="telefono" name="telefono" class="form-control" id="floatingtelefono" placeholder="telefono" required>
+            <label for="floatingtelefono">Teléfono</label>
+        </div>
+        <div class="form-floating mb-3">
+            <select name="tipo_usuario" id="tipo_usuario" required>
+          <option value="" selected>Tipo de usuario</option>
+        
+          <option value="arrendatario">Arrendatario</option>
+        
+          <option value="arrendador">Arrendador</option>
+        
+        </select>
+                </div>
+
+
+          
+        <button class="w-100 btn btn-lg btn-custom mb-3" type="submit">Registrarse</button>
+      </form>
+    </div>
+  </section>
 {% endblock %}
+
 
 

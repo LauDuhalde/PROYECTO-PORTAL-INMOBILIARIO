@@ -73,6 +73,36 @@ Requerimiento 3: Consultar con SQL inmuebles por Región
 
 </details>
 
+<details>
+<summary>Hito 3</summary>
+
+Requerimiento 1.1: Generar una vista de login de usuario
+Se usa funcionalidad de django para el login, solo se modifica apariencia de formulario
+
+[Vista Login]()
+
+Requerimiento 1.2: Generar una vista de registro
+Se crea view y template registro_usuario que recibe formulario personalizado
+
+[Vista Registro]()
+
+Requerimiento 1.3: Realizar redireccionamiento de urls
+
+[urls]()
+
+Requerimiento 1.4: Desplegar los datos de usuario
+En página principal se le da la bienvenida al usuario logueado mediante su nombre
+
+[Bienvenida]()
+
+Se crea template Mi Perfil para mostrar los datos del usuario
+
+[Mi perfil]()
+
+Rquerimiento 2: Agregar a la página personal de un Arrendatario y Arrendador la posibilidad de modificar sus datos personales.
+
+</details>
+
 ## Características Base del Sitio Web
 
 Sitio web desarrollado con Django 4.2, Bootstrap 5.0.2 y PosgreSQL 15
