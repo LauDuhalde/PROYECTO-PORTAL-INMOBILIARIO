@@ -56,3 +56,6 @@ def crear_solicitud_arriendo(request, inmueble_id, usuario_id):
 
 def success(request):
     return render(request, 'success.html',{})
+
+def mi_perfil(request):
+    return render(request,'mi_perfil.html')

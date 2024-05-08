@@ -1,0 +1,80 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<section id="perfil" class="container p-5 text-center border rounded mb-5">
+  <div style="background-color: #f4f5f7;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 text-center align-items-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background-color: #8B4513;">
+                <h5 class="mt-5">{{user.usuario.nombres}}{{user.usuario.apellidos}}</h5>
+                <p>RUT: {{user.usuario.rut}}</p>
+                <p>TIPO: {{user.usuario.tipo_usuario}}</p>
+                <!--<i class="far fa-edit mb-5"></i>-->
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6 class='bg-custom text-white'>Información</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Usuario</h6>
+                      <p class="text-muted">{{user.username}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{user.usuario.correo_electronico}}</p>
+                    </div>
+                    <div class="row pt-1">
+                      <div class="col-6 mb-3">
+                        <h6>Dirección</h6>
+                        <p class="text-muted">{{user.usuario.direccion}}</p>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Telefono</h6>
+                        <p class="text-muted">{{user.usuario.telefono}}</p>
+                      </div>
+                  </div>
+
+                  {% if user.usuario.tipo_usuario == 'arrendatario' %}
+                  <h6 class='bg-custom text-white'>Solicitudes</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-12 mb-3">
+                      <h6>Inmuebles</h6>
+                      <p class="text-muted">Lorem ipsum</p>
+                    </div>
+                  </div>
+                  {%else%}
+                  <h6 class='bg-custom text-white'>Inmuebles</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-12 mb-3">
+                      <h6>Inmuebles</h6>
+                      <p class="text-muted">Lorem ipsum</p>
+                    </div>
+                  </div>
+                  <h6 class='bg-custom text-white'>Solicitudes Recibidas</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-12 mb-3">
+                      <h6>Inmuebles</h6>
+                      <p class="text-muted">Lorem ipsum</p>
+                    </div>
+                  </div>
+                  {%endif%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

@@ -12,12 +12,15 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-
-    <title>{% block 'tittle' %}Bienvenido a Portal inmobiliario{% endblock %}</title>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3432f07c5e.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
     {% block css %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
+
+    <title>{% block 'tittle' %}Bienvenido a Portal inmobiliario{% endblock %}</title>
   </head>
 
   <body>

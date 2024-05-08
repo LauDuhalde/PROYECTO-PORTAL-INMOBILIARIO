@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from web.views import registro_usuario,index, detalle_inmueble, crear_solicitud_arriendo, success
+from web.views import registro_usuario,index, detalle_inmueble, crear_solicitud_arriendo, success, mi_perfil
 0
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
@@ -30,7 +30,8 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
     path('detalle_inmueble/<int:id>/', detalle_inmueble, name='detalle_inmueble'),
     path('crear_solicitud/<int:inmueble_id>/<int:usuario_id>/', crear_solicitud_arriendo, name='crear_solicitud_arriendo'),
-    path('success', success, name="success"),
+    path('success/', success, name="success"),
+    path('mi_perfil/', mi_perfil, name="mi_perfil"),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
