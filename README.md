@@ -79,25 +79,25 @@ Requerimiento 3: Consultar con SQL inmuebles por Región
 Requerimiento 1.1: Generar una vista de login de usuario
 Se usa funcionalidad de django para el login, solo se modifica apariencia de formulario
 
-[Vista Login]()
+![Vista Login](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/1.1%20Generar%20una%20vista%20de%20login%20de%20usuarios.png)
 
 Requerimiento 1.2: Generar una vista de registro
 Se crea view y template registro_usuario que recibe formulario personalizado
 
-[Vista Registro]()
+![Vista Registro](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/1.2%20Generar%20una%20vista%20de%20registro.png)
 
 Requerimiento 1.3: Realizar redireccionamiento de urls
 
-[urls]()
+![URLs](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/1.3%20Realizar%20redireccionamiento%20de%20urls.png)
 
 Requerimiento 1.4: Desplegar los datos de usuario
 En página principal se le da la bienvenida al usuario logueado mediante su nombre
 
-[Bienvenida]()
+![Bienvenida](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/1.4%20Desplegar%20los%20datos%20del%20usuario%20-%20Bienvenida.png)
 
 Se crea template Mi Perfil para mostrar los datos del usuario
 
-[Mi perfil]()
+![Mi perfil](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/1.4%20Desplegar%20los%20datos%20del%20usuario%20-%20Mi%20perfil.png)
 
 Rquerimiento 2: Agregar a la página personal de un Arrendatario y Arrendador la posibilidad de modificar sus datos personales.
 
