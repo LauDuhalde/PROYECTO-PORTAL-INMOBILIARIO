@@ -29,7 +29,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
     path('detalle_inmueble/<int:id>/', detalle_inmueble, name='detalle_inmueble'),
-    path('crear_solicitud/<int:inmueble_id>/<int:usuario_id>/', crear_solicitud_arriendo, name='crear_solicitud_arriendo'),
+    path('crear_solicitud/<int:inmueble_id>/', crear_solicitud_arriendo, name='crear_solicitud_arriendo'),
     path('success/', success, name="success"),
     path('mi_perfil/', mi_perfil, name="mi_perfil"),
 

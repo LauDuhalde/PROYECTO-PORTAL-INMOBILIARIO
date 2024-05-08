@@ -35,10 +35,10 @@ def registro_usuario(request):
     return render(request, 'registro_usuario.html', {'form': form})
 
 
-def crear_solicitud_arriendo(request, inmueble_id, usuario_id):
+def crear_solicitud_arriendo(request, inmueble_id):
     # Obtener instancia del inmueble y el usuario
     inmueble = Inmueble.objects.get(pk=inmueble_id)
-    usuario = Usuario.objects.get(pk=usuario_id)
+    usuario = request.user.usuario
             
     if request.method == 'POST':
         form = SolicitudArriendoForm(request.POST)
@@ -51,11 +51,34 @@ def crear_solicitud_arriendo(request, inmueble_id, usuario_id):
             
             return redirect('success')
     else:
-        form = SolicitudArriendoForm(initial={'arrendatario': usuario_id, 'inmueble': inmueble_id})
+        form = SolicitudArriendoForm(initial={'arrendatario': usuario.id, 'inmueble': inmueble.id})
     return render(request, 'solicitud_arriendo.html', {'form': form, 'usuario':usuario, 'inmueble':inmueble})
 
 def success(request):
     return render(request, 'success.html',{})
 
 def mi_perfil(request):
-    return render(request,'mi_perfil.html')
+    usuario = request.user.usuario
+    inmuebles_y_solicitudes = None
+    solicitudes_arrendatario = None
+    if usuario.tipo_usuario == 'arrendador':
+        # Consultar todos los inmuebles del usuario
+        inmuebles_arrendador = Inmueble.objects.filter(arrendador=usuario)
+
+        # Inicializar una lista para almacenar los inmuebles y sus solicitudes asociadas
+        inmuebles_y_solicitudes = []
+
+        # Iterar sobre los inmuebles del usuario
+        for inmueble in inmuebles_arrendador:
+            # Consultar todas las solicitudes asociadas a este inmueble
+            solicitudes = SolicitudArriendo.objects.filter(inmueble=inmueble)
+            
+            # Agregar el inmueble y sus solicitudes asociadas a la lista
+            inmuebles_y_solicitudes.append({
+                'inmueble': inmueble,
+                'solicitudes': solicitudes
+            })
+    else:
+        # Consultar todas las solicitudes de arriendo realizadas por el arrendatario
+        solicitudes_arrendatario = SolicitudArriendo.objects.filter(arrendatario=usuario)
+    return render(request,'mi_perfil.html',{'inmuebles_y_solicitudes':inmuebles_y_solicitudes, 'solicitudes_arrendatario':solicitudes_arrendatario})
