@@ -24,6 +24,13 @@
           <p>Precio arriendo: ${{ inmueble.precio }}</p>
           {% if user.usuario.tipo_usuario == 'arrendatario' %}
             <a href="{% url 'crear_solicitud_arriendo' inmueble.id %}">Crear Solicitud de Arriendo</a>
+          {% else %}
+          <p>{% if inmueble.disponible %}
+                Disponible
+            {% else %}
+                No Disponible
+            {% endif %}
+          </p>
           {% endif %}
       </div>
   </div>

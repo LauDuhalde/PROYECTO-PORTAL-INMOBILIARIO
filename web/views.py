@@ -21,7 +21,7 @@ def obtener_comunas(request):
 def index(request):
     regiones = Region.objects.all()
     comunas = Comuna.objects.all()
-    inmuebles = Inmueble.objects.all()  # Obtener todos los inmuebles por defecto o filtrar según tus necesidades
+    inmuebles = Inmueble.objects.filter(disponible=True)  # Obtener todos los inmuebles disponibles por defecto o filtrar según tus necesidades
     
     # Lógica para filtrar inmuebles por región y comuna si se han seleccionado
     region_id = request.GET.get('region')
