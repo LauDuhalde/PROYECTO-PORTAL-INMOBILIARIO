@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from web.views import registro_usuario,index, detalle_inmueble, crear_solicitud_arriendo, success, mi_perfil
+from web.views import registro_usuario,index, detalle_inmueble, crear_solicitud_arriendo, success, mi_perfil, obtener_comunas
 0
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
@@ -32,6 +32,7 @@ urlpatterns = [
     path('crear_solicitud/<int:inmueble_id>/', crear_solicitud_arriendo, name='crear_solicitud_arriendo'),
     path('success/', success, name="success"),
     path('mi_perfil/', mi_perfil, name="mi_perfil"),
+    path('obtener_comunas/', obtener_comunas, name='obtener_comunas'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

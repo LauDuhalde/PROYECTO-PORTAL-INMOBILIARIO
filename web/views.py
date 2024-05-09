@@ -1,15 +1,40 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 
-from web.models import SolicitudArriendo, Inmueble, Usuario
+from web.models import SolicitudArriendo, Inmueble, Usuario, Region, Comuna
 from .forms import RegistroUsuarioForm, SolicitudArriendoForm
 
 # Create your views here.
 
+# def index(request):
+#     inmuebles =  Inmueble.objects.all()
+#     return render(request, 'index.html',{'inmuebles':inmuebles})
+
+#Para filtrar comunas según región seleccionada
+def obtener_comunas(request):
+    region_id = request.GET.get('region_id')
+    comunas = Comuna.objects.filter(region_id=region_id).values('id', 'nombre')
+    return JsonResponse(list(comunas), safe=False)
+
 def index(request):
-    inmuebles =  Inmueble.objects.all()
-    return render(request, 'index.html',{'inmuebles':inmuebles})
+    regiones = Region.objects.all()
+    comunas = Comuna.objects.all()
+    inmuebles = Inmueble.objects.all()  # Obtener todos los inmuebles por defecto o filtrar según tus necesidades
+    
+    # Lógica para filtrar inmuebles por región y comuna si se han seleccionado
+    region_id = request.GET.get('region')
+    comuna_id = request.GET.get('comuna')
+    selected_region = None
+    if region_id:
+        selected_region = Region.objects.get(pk=region_id)
+        if not comuna_id:
+            inmuebles = Inmueble.objects.filter(comuna__region=selected_region)
+        else:
+            inmuebles = Inmueble.objects.filter(comuna_id=comuna_id)
+    
+    return render(request, 'index.html', {'regiones': regiones, 'comunas': comunas, 'inmuebles': inmuebles, 'selected_region': selected_region})
 
 @login_required
 def detalle_inmueble(request, id):
