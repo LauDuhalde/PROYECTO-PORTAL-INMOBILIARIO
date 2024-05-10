@@ -2,17 +2,11 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
-from web.models import SolicitudArriendo, Inmueble, Usuario, Region, Comuna
-from .forms import RegistroUsuarioForm, SolicitudArriendoForm
+from web.models import SolicitudArriendo, Inmueble, Region, Comuna
+from .forms import RegistroUsuarioForm, SolicitudArriendoForm, PerfilUsuarioForm
 
-# Create your views here.
-
-# def index(request):
-#     inmuebles =  Inmueble.objects.all()
-#     return render(request, 'index.html',{'inmuebles':inmuebles})
-
-#Para filtrar comunas según región seleccionada
 def obtener_comunas(request):
     region_id = request.GET.get('region_id')
     comunas = Comuna.objects.filter(region_id=region_id).values('id', 'nombre')
@@ -107,3 +101,17 @@ def mi_perfil(request):
         # Consultar todas las solicitudes de arriendo realizadas por el arrendatario
         solicitudes_arrendatario = SolicitudArriendo.objects.filter(arrendatario=usuario)
     return render(request,'mi_perfil.html',{'inmuebles_y_solicitudes':inmuebles_y_solicitudes, 'solicitudes_arrendatario':solicitudes_arrendatario})
+
+def editar_perfil(request):
+    usuario = request.user.usuario
+    
+    if request.method == 'POST':
+        form = PerfilUsuarioForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Tus datos se han actualizado correctamente.')
+            return redirect('mi_perfil')
+    else:
+        form = PerfilUsuarioForm(instance=usuario)
+    
+    return render(request, 'editar_perfil.html', {'form': form})

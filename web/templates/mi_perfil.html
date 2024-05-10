@@ -5,15 +5,14 @@
   <div style="background-color: #f4f5f7;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="col col-lg-10 mb-4 mb-lg-0">
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
-              <div class="col-md-4 text-center align-items-center text-white"
-                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background-color: #8B4513;">
-                <h5 class="mt-5">{{user.usuario.nombres}}{{user.usuario.apellidos}}</h5>
+              <div class="col-md-4 text-center align-items-center text-white bg-custom-perfil"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <h5 class="mt-5">{{user.usuario.nombres}} {{user.usuario.apellidos}}</h5>
                 <p>RUT: {{user.usuario.rut}}</p>
                 <p>TIPO: {{user.usuario.tipo_usuario}}</p>
-                <!--<i class="far fa-edit mb-5"></i>-->
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
@@ -37,6 +36,7 @@
                         <h6>Telefono</h6>
                         <p class="text-muted">{{user.usuario.telefono}}</p>
                       </div>
+                      <a class="text-decoration-none text-muted" href="{% url 'editar_perfil' %}">Modificar datos <i class="far fa-edit mb-5"></i></a>
                   </div>
 
                   {% if user.usuario.tipo_usuario == 'arrendatario' %}
