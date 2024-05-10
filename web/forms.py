@@ -1,6 +1,5 @@
 from django import forms
-from .models import Usuario, SolicitudArriendo
-from django.contrib.auth.forms import UserChangeForm
+from .models import Usuario, SolicitudArriendo, Inmueble
 
 class RegistroUsuarioForm(forms.ModelForm):
     class Meta:
@@ -23,3 +22,8 @@ class PerfilUsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ['nombres', 'apellidos', 'direccion', 'telefono', 'correo_electronico']
+        
+class InmuebleForm(forms.ModelForm):
+    class Meta:
+        model = Inmueble
+        exclude = ('propietario',)  # Excluimos el campo 'propietario' del formulario

@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from web.models import SolicitudArriendo, Inmueble, Region, Comuna
-from .forms import RegistroUsuarioForm, SolicitudArriendoForm, PerfilUsuarioForm
+from .forms import RegistroUsuarioForm, SolicitudArriendoForm, PerfilUsuarioForm, InmuebleForm
 
 def obtener_comunas(request):
     region_id = request.GET.get('region_id')
@@ -115,3 +115,42 @@ def editar_perfil(request):
         form = PerfilUsuarioForm(instance=usuario)
     
     return render(request, 'editar_perfil.html', {'form': form})
+
+
+##Código profe
+
+def crear_inmueble(request):
+    if request.method == 'POST':
+        form = InmuebleForm(request.POST, request.FILES)
+        print(form)
+        if form.is_valid():
+            inmueble = form.save(commit=False)
+            inmueble.propietario = request.user.usuario
+            inmueble.save()
+            return redirect('index') 
+    else:
+        form = InmuebleForm()
+    return render(request, 'alta_inmueble.html', {'form': form})
+
+
+@login_required
+def actualizar_inmueble(request, id):
+    inmueble = get_object_or_404(Inmueble, pk=id)
+    if request.method == 'POST':
+        form = InmuebleForm(request.POST, request.FILES, instance=inmueble)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = InmuebleForm(instance=inmueble)
+    return render(request, 'editar_inmueble.html',{'form':form })
+        
+@login_required
+def eliminar_inmueble(request, id):
+    inmueble = get_object_or_404(Inmueble, pk=id)
+    if request.method == 'POST':
+        inmueble.delete()
+        return redirect('index')
+    else:
+        return render(request,'eliminar_inmueble.html', {'inmueble':inmueble} )
+        
