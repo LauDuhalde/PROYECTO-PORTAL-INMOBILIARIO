@@ -101,15 +101,7 @@ Se crea template Mi Perfil para mostrar los datos del usuario
 
 Rquerimiento 2: Agregar a la página personal de un Arrendatario y Arrendador la posibilidad de modificar sus datos personales.
 
-Se crea template Mi Perfil para mostrar datos de arrendador y arrendatario con un link al formulario de modificación de datos de contacto.
-Para arrendador se ven las propiedades ingresadas a su nombre
-
-![Presentación datos arrendador](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/2%20Presentaci%C3%B3n%20de%20datos%20arrendador.png)
-
-Para arrendatario se ven las solicitudes realizadas
-
-![Presentación datos arrendatario](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/2%20Presentaci%C3%B3n%20de%20datos%20arrendatario.png)
-
+En template Mi Perfil se añade un link al formulario de modificación de datos de contacto.
 En el formulario de edición, no se permite modificar RUT, nombre de usuario ni contraseña.
 
 ![Editar perfil](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/2%20Editar%20perfil.png)
