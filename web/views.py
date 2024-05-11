@@ -140,7 +140,7 @@ def actualizar_inmueble(request, id):
         form = InmuebleForm(request.POST, request.FILES, instance=inmueble)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('mi_perfil')
     else:
         form = InmuebleForm(instance=inmueble)
     return render(request, 'editar_inmueble.html',{'form':form })
