@@ -26,4 +26,4 @@ class PerfilUsuarioForm(forms.ModelForm):
 class InmuebleForm(forms.ModelForm):
     class Meta:
         model = Inmueble
-        exclude = ('propietario',)  # Excluimos el campo 'propietario' del formulario
+        exclude = ('arrendador',)  # Excluimos el campo 'propietario' del formulario

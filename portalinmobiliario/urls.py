@@ -36,7 +36,7 @@ urlpatterns = [
     path('obtener_comunas/', obtener_comunas, name='obtener_comunas'),
     path('inmueble/<int:id>/editar_inmueble',actualizar_inmueble, name='editar_inmueble'),
     path('inmueble/<int:id>/eliminar_inmueble',eliminar_inmueble, name='eliminar_inmueble'),
-    path('alta-inmueble/', crear_inmueble, name='alta_inmueble'),
+    path('ingresar_inmueble/', crear_inmueble, name='ingresar_inmueble'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

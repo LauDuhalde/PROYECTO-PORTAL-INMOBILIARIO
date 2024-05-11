@@ -125,12 +125,12 @@ def crear_inmueble(request):
         print(form)
         if form.is_valid():
             inmueble = form.save(commit=False)
-            inmueble.propietario = request.user.usuario
+            inmueble.arrendador = request.user.usuario
             inmueble.save()
             return redirect('index') 
     else:
         form = InmuebleForm()
-    return render(request, 'alta_inmueble.html', {'form': form})
+    return render(request, 'ingresar_inmueble.html', {'form': form})
 
 
 @login_required
