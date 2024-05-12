@@ -171,7 +171,7 @@ Sitio web desarrollado con Django 4.2, PosgreSQL 15 y Bootstrap 5.0.2.
 <summary>Index: Página principal que muestra la lista de inmuebles disponibles para arriendo. Permite filtrar por REgión y/o comuna.</summary>
 También se puede acceder desde la opción Inmuebles disponibles. No requiere login.
 
-![Index]()
+![Index](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Index.png)
 
 </details>
 
@@ -180,37 +180,35 @@ También se puede acceder desde la opción Inmuebles disponibles. No requiere lo
 En caso de no tener cuenta permite acceder al registro mediante un link.
 El cierre de sesión está disponible mediante menú desplegable "Bienvenido". Al cerrar la sesión se redirige al Index. 
 
-![Login]()
-
-
+![Login](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Login.png)
 
 </details>
 
 <details>
 <summary>Registrate: Permite el registro de nuevos usuarios, pueden escoger entre tipo Arrendador o Arrendatario</summary>
 
-![Registrate]()
+![Registrate](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Registro.png)
 
 </details>
 
 <details>
 <summary>Mi Perfil: Muestra los datos del usuario logueado y da acceso a la modificación de estos mediante un link.</summary>
 
-![Mi perfil]()
+![Mi perfil](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Mi%20perfil.png)
 
 </details>
 
 <details>
 <summary>Editar Perfil: Permite a los uauarios registrados modificar nombre, apellido y sus datos de contacto</summary>
 
-![Editar perfil]()
+![Editar perfil](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Editar%20perfil.png)
 
 </details>
 
 <details>
 <summary>Dashboard Arrendador: Permite que el usuario identificado como arrendador vea un listado de sus inmuebles, sin importar el estado de disponibilidad y que pueda administrar las solicitudes de arriendo recibidas.</summary>
 
-![Dashboard Arrendador]()
+![Dashboard Arrendador](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Dashboard%20Arrendador.png)
 
 </details>
 
@@ -218,14 +216,14 @@ El cierre de sesión está disponible mediante menú desplegable "Bienvenido". A
 <summary>Dashboard Arrendatario: Permite que el usuario identificado como arrendatario vea un listado de sus solicitudes.</summary>
 Permite cancelar las solicitudes con estado Pendiente.
 
-![Dashboard Arrendatario]()
+![Dashboard Arrendatario](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Dashboard%20Arrendatario.png)
 
 </details>
 
 <details>
 Ingresar Inmueble: Formulario para registro de nuevos inmuebles. Se requiere login como arrendador.
 
-![Ingresar Inmueble]()
+![Ingresar Inmueble](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Ingresar%20inmueble.png)
 
 </details>
 
@@ -233,11 +231,11 @@ Ingresar Inmueble: Formulario para registro de nuevos inmuebles. Se requiere log
 <summary>Detalle Inmueble: Muestra los datos completos del inmueble.</summary>
 Para Arendatarios da acceso al ingreso de Solicitudes de arriendo para ese inmueble.
 
-![Detalle inmueble - Arrendatario]()
+![Detalle inmueble - Arrendatario](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Detalle%20Inmueble%20-%20Arrendatario.png)
 
 Para Arendador da acceso a Editar y Eliminar el Inmueble. Pide confirmación antes de derivar a las páginas correspondientes.
 
-![Detalle inmueble - Arrendador]()
+![Detalle inmueble - Arrendador](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Detalle%20Inmueble%20-%20Arrendador.png)
 
 </details>
 
@@ -246,9 +244,9 @@ Para Arendador da acceso a Editar y Eliminar el Inmueble. Pide confirmación ant
 <summary>Ingresar solicitud de arriendo: Se accede desde detalle de inmueble y permite ingresar una solicitud para esa publicación en especifico</summary>
 Sólo permite enviar un mensaje personalizado al Arrendador, los demás datos no son modificables.
 
-![Ingresar solicitud de arriendo]()
+![Ingresar solicitud de arriendo](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Ingresar%20solicitud%20de%20arriendo.png)
 
-![Ingreso solicitud exitoso]()
+![Ingreso solicitud exitoso](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Ingresar%20solicitud%20de%20arriendo%20-%20Success.png)
 
 </details>
 
@@ -256,7 +254,7 @@ Sólo permite enviar un mensaje personalizado al Arrendador, los demás datos no
 <summary>Editar Inmueble: Permite a los arrendadores modificar los datos de sus inmuebles.</summary>
 Al finalizar la modificación redirecciona a Mi Perfil.
 
-![Editar Inmueble]()
+![Editar Inmueble](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Editar%20inmueble.png)
 
 </details>
 
@@ -264,7 +262,7 @@ Al finalizar la modificación redirecciona a Mi Perfil.
 <summary>Eliminar Inmueble: Permite eliminar el inmueble desde el que se accedió. Es una reconfirmación de eliminación.</summary>
 Luego de eliminar redirecciona al Index.
 
-![Eliminar Inmueble]()
+![Eliminar Inmueble](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Eliminar%20inmueble.png)
 
 </details>
 
@@ -272,7 +270,7 @@ Luego de eliminar redirecciona al Index.
 
 Solicitudes: Es visible para los usuarios Arrendador y muestra un listado completo de solicitudes recibidas. No permite administración de éstas.
 
-![Solicitudes]()
+![Solicitudes](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Solicitudes.png)
 
 </details>
 
