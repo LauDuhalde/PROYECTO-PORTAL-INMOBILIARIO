@@ -268,7 +268,8 @@ Luego de eliminar redirecciona al Index.
 
 <details>
 
-Solicitudes: Es visible para los usuarios Arrendador y muestra un listado completo de solicitudes recibidas. No permite administración de éstas.
+<summary>Solicitudes: Es visible para los usuarios Arrendador y muestra un listado completo de solicitudes recibidas.</summary>
+No permite administración de éstas.
 
 ![Solicitudes](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Solicitudes.png)
 
