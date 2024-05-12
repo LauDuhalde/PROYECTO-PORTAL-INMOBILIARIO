@@ -106,12 +106,70 @@ En el formulario de edición, no se permite modificar RUT, nombre de usuario ni 
 
 ![Editar perfil](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito3/2%20Editar%20perfil.png)
 
-
 </details>
 
+<details>
+<summary>Hito 4</summary>
+
+Requerimiento 1: Crear página web básica donde arrendadores puedan agregar nuevos inmuebles.
+
+![Agregar Inmueble]()
+
+Requerimiento 1.a: Generar las rutas para la vista para agregar nuevas viviendas.
+
+![Ruta Agregar Inmueble]()
+
+Requerimiento 1.b: Generar el objeto de formulario.
+Se crea un formulario personalizado para el ingreso de datos y actualización de inmueble.
+
+![Formulario Inmueble]()
+
+Requerimiento 1.c: Agregar la función para guardar el objeto.
+Se crea una view que recibe el formulario y lo guarda en la base de datos.
+
+![View Agregar Inmueble]()
+
+Requerimiento 2: Crear página web básica donde arrendadores puedan actualizar/borrar un inmueble existente.
+
+![Editar/Borrar Inmueble]()
+
+Requerimiento 2.a: Generar las rutas para la vista para actualizar las viviendas por usuario.
+
+![Ruta Editar/Borrar Inmueble]()
+
+Requerimiento 2.b: Generar el objeto de formulario en base a él modelo definido.
+Se utiliza el mismo formulario del requerimiento 1.b
+
+Requerimiento 2.c: Agregar la función para actualizar el objeto.
+Se crean una views que reciben el formulario y lo actualiza o elimina en la base de datos. 
+El formulario lleva la instancia del inmueble que se desea editar/borrar para identificarlo.
+
+![View Editar inmueble]()
+
+Requerimiento 3: Crear una página web básica donde los arrendatarios puedan ver la oferta disponible.
+
+![Oferta Inmuebles Disponibles]()
+
+Requerimiento 3.a: Generar las rutas para ver las viviendas.
+
+![Ruta Lista Inmuebles (index)]()
+
+Requerimiento 3.b: Crear la vista y el controlador que le permitan enlistar las viviendas.
+Se crea una view que busca los inmuebles disponibles y lo muestra en la página principal.
+Esta se puede filtrar por región y/o comuna.
+
+![Lista Inmuebles]()
+
+
+</details>
 ## Características Base del Sitio Web
 
 Sitio web desarrollado con Django 4.2, Bootstrap 5.0.2 y PosgreSQL 15
 
 ## Problemas o Dificultades al Desarrollar el Sitio Web
+
+Conseguir que el modelo de Usuario herede correctamente de la clase AbstractUser para no repetir campos, esto no fue solucionado.
+Realizar el filtrado de los inmuebles por región y comuna, ya que quería que se actualizara la lista de comunas al momento de seleccionar la región. Se soluciona utilizando AJAX.
+
+![Función JS/AJAX]()
 

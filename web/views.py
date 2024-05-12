@@ -24,9 +24,9 @@ def index(request):
     if region_id:
         selected_region = Region.objects.get(pk=region_id)
         if not comuna_id:
-            inmuebles = Inmueble.objects.filter(comuna__region=selected_region)
+            inmuebles = Inmueble.objects.filter(comuna__region=selected_region, disponible=True)
         else:
-            inmuebles = Inmueble.objects.filter(comuna_id=comuna_id)
+            inmuebles = Inmueble.objects.filter(comuna_id=comuna_id, disponible=True)
     
     return render(request, 'index.html', {'regiones': regiones, 'comunas': comunas, 'inmuebles': inmuebles, 'selected_region': selected_region})
 
@@ -53,7 +53,7 @@ def registro_usuario(request):
         form = RegistroUsuarioForm()
     return render(request, 'registro_usuario.html', {'form': form})
 
-
+@login_required
 def crear_solicitud_arriendo(request, inmueble_id):
     # Obtener instancia del inmueble y el usuario
     inmueble = Inmueble.objects.get(pk=inmueble_id)
@@ -76,6 +76,7 @@ def crear_solicitud_arriendo(request, inmueble_id):
 def success(request):
     return render(request, 'success.html',{})
 
+@login_required
 def mi_perfil(request):
     usuario = request.user.usuario
     inmuebles_y_solicitudes = None
@@ -102,6 +103,7 @@ def mi_perfil(request):
         solicitudes_arrendatario = SolicitudArriendo.objects.filter(arrendatario=usuario)
     return render(request,'mi_perfil.html',{'inmuebles_y_solicitudes':inmuebles_y_solicitudes, 'solicitudes_arrendatario':solicitudes_arrendatario})
 
+@login_required
 def editar_perfil(request):
     usuario = request.user.usuario
     
@@ -117,8 +119,7 @@ def editar_perfil(request):
     return render(request, 'editar_perfil.html', {'form': form})
 
 
-##Código profe
-
+@login_required
 def crear_inmueble(request):
     regiones = Region.objects.all()
     if request.method == 'POST':
