@@ -221,7 +221,7 @@ Permite cancelar las solicitudes con estado Pendiente.
 </details>
 
 <details>
-Ingresar Inmueble: Formulario para registro de nuevos inmuebles. Se requiere login como arrendador.
+<summary>Ingresar Inmueble: Formulario para registro de nuevos inmuebles. Se requiere login como arrendador.</summary>
 
 ![Ingresar Inmueble](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito5/Ingresar%20inmueble.png)
 
@@ -278,7 +278,12 @@ No permite administración de éstas.
 ## Problemas o Dificultades al Desarrollar el Sitio Web
 
 Conseguir que el modelo de Usuario herede correctamente de la clase AbstractUser para no repetir campos, esto no fue solucionado.
-Realizar el filtrado de los inmuebles por región y comuna, ya que quería que se actualizara la lista de comunas al momento de seleccionar la región. Se soluciona utilizando AJAX.
+
+<details>
+<summary>Realizar el filtrado de los inmuebles por región y comuna, ya que quería que se actualizara la lista de comunas al momento de seleccionar la región.</summary>
+Se soluciona utilizando AJAX.
 
 ![Función JS/AJAX](https://github.com/LauDuhalde/PROYECTO-PORTAL-INMOBILIARIO/blob/main/screenshots_hitos/hito4/Funcion%20filtrar%20comuna.png)
+
+</details>
 
