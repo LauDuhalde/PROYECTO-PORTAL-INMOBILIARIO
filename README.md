@@ -279,7 +279,9 @@ No permite administración de éstas.
 
 <details><summary>Conseguir que el modelo de Usuario herede correctamente de la clase AbstractUser para no repetir campos y poder crear el registros correctamente.</summary>
 La creación del usuario se solucionó en la versión 2 del proyecto (https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2) 
-Se usó un formulario personalizado tanto para la creación como para la actualización de estos.
+Se usó administración de usuarios personalizada y formularios tanto para la creación como para la actualización de estos.
+
+![Modulo administración](https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2/blob/main/Hitos/hito5/CustomUserAdmin.png)
 
 ![Formulario CustomUserCreationForm](https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2/blob/main/Hitos/hito5/CustomUserCreationForm.png)
 
