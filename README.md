@@ -277,7 +277,17 @@ No permite administración de éstas.
 
 ## Problemas o Dificultades al Desarrollar el Sitio Web
 
-Conseguir que el modelo de Usuario herede correctamente de la clase AbstractUser para no repetir campos, esto no fue solucionado.
+<details><summary>Conseguir que el modelo de Usuario herede correctamente de la clase AbstractUser para no repetir campos y poder crear el registros correctamente.</summary>
+La creación del usuario se solucionó en la versión 2 del proyecto (https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2) 
+Se usó un formulario personalizado tanto para la creación como para la actualización de estos.
+
+![Formulario CustomUserCreationForm](https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2/blob/main/Hitos/hito5/CustomUserCreationForm.png)
+
+Pero formulario de edición, en template, quedó con mensaje que indica que no se puede manipular la contraseña.
+
+![Detalle Contraseña](https://github.com/LauDuhalde/PORTAL-INMOBILIARIO-V2/blob/main/Hitos/hito5/Editar%20perfil%20v2-%20detalle%20contrase%C3%B1a.png)
+
+</details>
 
 <details>
 <summary>Realizar el filtrado de los inmuebles por región y comuna, ya que quería que se actualizara la lista de comunas al momento de seleccionar la región.</summary>
