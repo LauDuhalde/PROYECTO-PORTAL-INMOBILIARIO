@@ -31,6 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY') #tambien funciona os.environ.get('SECRET_KE
 DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
 
 
 # Application definition
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'portalinmobiliario.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
