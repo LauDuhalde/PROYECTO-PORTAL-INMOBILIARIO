@@ -4,8 +4,7 @@
 Una empresa dedicada al arriendo de inmuebles requiere de su ayuda para crear un sitio
 web donde usuarios puedan revisar inmuebles disponibles para el arriendo, separado por
 comuna y región. El sitio web poseerá dos tipos de usuarios: arrendatarios y arrendadores.
-Los distintos usuarios deberán poder realizar distintas operaciones dentro del sitio que
-serán detalladas a continuación.
+Los distintos usuarios deberán poder realizar distintas operaciones dentro del sitio según su rol.
 
 ## Hitos de desarrollo
 <details>
