@@ -30,8 +30,8 @@ SECRET_KEY = os.getenv('SECRET_KEY') #tambien funciona os.environ.get('SECRET_KE
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
+ALLOWED_HOSTS = ['127.0.0.1','proyecto-portal-inmobiliario.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://proyecto-portal-inmobiliario.onrender.com']
 
 
 # Application definition
